@@ -1,6 +1,6 @@
-# 💰 Paytm Backend (Express + MongoDB)
+# 💰 FINVERSE Backend (Express + MongoDB)
 
-This is a backend project that mimics the core features of **Paytm**.  
+This is a backend project that mimics the core features of **A payment application**.  
 Built with **Express.js**, **MongoDB**, and **Zod** for validation, it provides APIs for:  
 - 🔐 User **authentication & authorization**  
 - 🔎 Searching users  
@@ -41,7 +41,7 @@ Built with **Express.js**, **MongoDB**, and **Zod** for validation, it provides 
 1. **Clone the repository**
    ```bash
    git clone https://github.com/<your-username>/<your-repo>.git
-   cd paytm-backend
+   cd FINVERSE-backend
 
 
 Install dependencies
