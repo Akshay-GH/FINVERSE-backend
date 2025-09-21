@@ -50,8 +50,7 @@ cd paytm-backend
 Install dependencies
 
 npm install
-add your mongoDB connecting string in dbSchema.js file 
-add your server SECRET_KEY in confing.js
+SETUP YOUR .env with mongoUrl and SECRET_KEY.
 Run the server
 npm run dev
 
@@ -59,7 +58,7 @@ npm run dev
 
 
 Users
-POST /api/v1/users//signup → Create new user
+POST /api/v1/users/signup → Create new user
 
 POST /api/v1/users/login → Login & get JWT
 

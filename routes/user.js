@@ -8,7 +8,8 @@ const {
 } = require("../zodSchema.js");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-const { SECRET_KEY } = require("../config.js");
+require('dotenv').config();
+const SECRET_KEY = process.env.SECRET_KEY;
 const { authMiddleware } = require("../gate/middleware.js");
 
 userRouter.post("/signup", async (req, res) => {
@@ -59,6 +60,8 @@ userRouter.post("/signup", async (req, res) => {
   res.status(201).json({ message: "User created successfully"});
 });
 
+
+
 userRouter.post("/login", async (req, res) => {
   // Logic for user login
   const result = loginUserSchema.safeParse(req.body);
@@ -81,10 +84,10 @@ userRouter.post("/login", async (req, res) => {
   }
 
   if (user) {
-    const token = jwt.sign({ userId: user._id }, SECRET_KEY, {
+    const token = jwt.sign({ userId: user._id ,firstName:user.firstName,lastName:user.lastName}, SECRET_KEY, {
       expiresIn: "1h",
     });
-    res.status(200).json({ message: "Login successful", token: token });
+    res.status(200).json({ message: "Login successful", token: "Bearer " + token });
     return;
   }
 
