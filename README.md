@@ -1,50 +1,47 @@
-Paytm Backend (Express + MongoDB)
+# 💰 Paytm Backend (Express + MongoDB)
 
-This is a backend project that mimics the core features of Paytm.
-Built with Express.js, MongoDB, and Zod for validation, it provides APIs for user authentication, authorization, searching users, and handling transactions.
+This is a backend project that mimics the core features of **Paytm**.  
+Built with **Express.js**, **MongoDB**, and **Zod** for validation, it provides APIs for:  
+- 🔐 User **authentication & authorization**  
+- 🔎 Searching users  
+- 💸 Sending & receiving **transactions**  
+- ✅ Secure validation  
 
-🚀 Features
+---
 
-User Authentication & Authorization
+## 🚀 Features
 
-Secure sign-up & login
+- **User Authentication & Authorization**  
+  - Secure sign-up & login  
+  - JWT-based authentication  
+  - Role-based access *(if implemented)*  
 
-JWT-based authentication
+- **User Search**  
+  - Search users by name, email, or phone number  
 
-Role-based access (if implemented)
+- **Transactions**  
+  - Transfer money between users  
+  - View balance & transaction history  
 
-User Search
+- **Validation**  
+  - Strong schema validation using **Zod**  
 
-Search users by name, email, or phone number
+---
 
-Transactions
+## 🛠️ Tech Stack
+- **Backend Framework**: Express.js  
+- **Database**: MongoDB (Mongoose ODM)  
+- **Validation**: Zod  
+- **Authentication**: JWT + bcrypt  
 
-Send money to other users
+---
 
-View transaction history
+## ⚙️ Setup Instructions
 
-Validation
-
-Strong schema validation using Zod
-
-🛠️ Tech Stack
-
-Backend Framework: Express.js
-
-Database: MongoDB (Mongoose ODM)
-
-Validation: Zod
-
-Authentication: JWT + bcrypt
-
-
-
-⚙️ Setup Instructions
-
-Clone the repository
-
-git clone https://github.com/<your-username>/<your-repo>.git
-cd paytm-backend
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/<your-username>/<your-repo>.git
+   cd paytm-backend
 
 
 Install dependencies
@@ -62,31 +59,25 @@ POST /api/v1/users/signup → Create new user
 
 POST /api/v1/users/login → Login & get JWT
 
-PUT /api/v1/users/--> update user password or firstname or lastname
+PUT /api/v1/users/ → Update user password or firstname/lastname
 
-GET /api/v1/users/bulk --> to search other users 
+GET /api/v1/users/bulk → Search other users
 
+- Accounts
+GET /api/v1/accounts/balance → Get user balance
 
-Accounts
-GET /api/v1/accounts/balance --> to get the user balance 
+POST /api/v1/accounts/transfer → Transfer money from one user to another
 
-POST /api/v1/accounts/transfer --> transfer money from one user to other 
-
-
-
-🔒 Security
-
+## Security
 Passwords hashed with bcrypt
 
 JWT used for secure authentication
 
 Input validation with Zod
 
-🚧 Future Improvements
-
+## Future Improvements
 Add support for UPI IDs
 
 Implement notifications
 
 Integrate payment gateway simulation
-
